@@ -41,13 +41,22 @@ int main() {
     
     // Entrada de dados do usuário
     printf("Digite o valor para Vermelho (0-255): ");
-    scanf("%d", &r);
+    if (scanf("%d", &r) != 1) {
+        fprintf(stderr, "Entrada inválida para Vermelho. Digite um número inteiro.\n");
+        return 1;
+    }
     
     printf("Digite o valor para Verde (0-255): ");
-    scanf("%d", &g);
+    if (scanf("%d", &g) != 1) {
+        fprintf(stderr, "Entrada inválida para Verde. Digite um número inteiro.\n");
+        return 1;
+    }
     
     printf("Digite o valor para Azul (0-255): ");
-    scanf("%d", &b);
+    if (scanf("%d", &b) != 1) {
+        fprintf(stderr, "Entrada inválida para Azul. Digite um número inteiro.\n");
+        return 1;
+    }
 
     // Criação da cor utilizando a estrutura
     CorRGB minhaCor = criarCor(r, g, b);
